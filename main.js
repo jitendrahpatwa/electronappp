@@ -16,7 +16,7 @@ function createWindow () {
   win.on('closed', function () {
     win = null
   })
-}
+} 
 // Create window on electron intialization
 app.on('ready', createWindow)
 // Quit when all windows are closed.
