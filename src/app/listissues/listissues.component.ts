@@ -13,6 +13,7 @@ import * as _ from 'lodash';
 })
 export class ListissuesComponent implements OnInit {
 
+  public ngxloading = false;
   constructor(
     public projectServ:ProjectService,
     public router:Router
@@ -21,7 +22,9 @@ export class ListissuesComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.ngxloading = true;
     this.projectServ.letsIssuing("18testbcdef@mail.com",location.href,"myFunc()","Some issues have taken");
+    this.ngxloading = false;
   }
 
 }

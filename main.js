@@ -4,11 +4,12 @@ function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({
     width: 1000, 
-    height: 600,
+    height: 650,
+    center:true,
     backgroundColor: '#ffffff',
     icon: `${__dirname}/src/assets/img/icon_issuer.png`,
     // frame: false,
-    // resizable:false,
+    resizable:false,
     // fullscreen:true,
     darkTheme:true
   })

@@ -18,16 +18,16 @@ export class HomeComponent implements OnInit {
 
   applists:any;
   showapplists:boolean = false;
-
+  public ngxloading = false;
   constructor(
     public projectServ:ProjectService,
     public router:Router
   ) { 
 
-    
   }
  
   ngOnInit() {
+    this.ngxloading = true;
     this.projectServ.getAppsData()
     .then(
       d=>{
@@ -50,15 +50,19 @@ export class HomeComponent implements OnInit {
           // console.log(data);
           this.applists = data;
           this.showapplists = true;
+          this.ngxloading = false;
         }else{
+          this.ngxloading = false;
           this.showapplists = false;
         }
       },
       e=>{
+        this.ngxloading = false;
         this.showapplists = false;
       }
     ).catch(
       e=>{
+        this.ngxloading = false;
         this.showapplists = false;
       }
     );
