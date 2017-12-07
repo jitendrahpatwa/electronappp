@@ -23,7 +23,7 @@ export class ListissuesComponent implements OnInit {
 
   ngOnInit() {
     this.ngxloading = true;
-    this.projectServ.letsIssuing("18testbcdef@mail.com",location.href,"myFunc()","Some issues have taken");
+    // this.projectServ.letsIssuing("18testbcdef@mail.com",location.href,"myFunc()","Some issues have taken");
     this.ngxloading = false;
   }
 

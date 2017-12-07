@@ -16,7 +16,7 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { CookieService } from 'ngx-cookie-service';
 import { OrderModule } from 'ngx-order-pipe';
 import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
-// import { Ng2Webstorage } from 'ngx-webstorage';
+import { Ng2Webstorage } from 'ngx-webstorage';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
@@ -58,7 +58,7 @@ import { LogintoolbarComponent } from './layout/logintoolbar/logintoolbar.compon
       maxOpened:1,
       preventDuplicates:true
     }),
-    // Ng2Webstorage,
+    Ng2Webstorage,
     NgxQRCodeModule.forRoot(),
     ClipboardModule,
     OrderModule,
