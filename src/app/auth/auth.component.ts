@@ -21,23 +21,9 @@ export class AuthComponent implements OnInit {
     public router:Router,
     public toastr:ToastrService
   ) { 
-    this.authform = this.formBuilder.group({
-      email:['',Validators.compose([Validators.required,Validators.email])],
-      password:['',Validators.compose([Validators.required,Validators.min(2)])]
-    });
   }
 
   ngOnInit() {
   }
 
-  makeAuth(){
-    if(this.authform.valid){
-      console.log(this.authform.value)
-      setTimeout(()=>{
-        this.router.navigate(['home']);
-      },2500);
-    }else{
-      this.toastr.error(null,"Invalid form submit. Fields are required.",{timeOut:2500});
-    }
-  }
 }

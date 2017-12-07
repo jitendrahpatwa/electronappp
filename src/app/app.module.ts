@@ -27,13 +27,15 @@ import { AuthComponent } from './auth/auth.component';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 import { HomeComponent } from './home/home.component';
 import { ListissuesComponent } from './listissues/listissues.component';
+import { LogintoolbarComponent } from './layout/logintoolbar/logintoolbar.component';
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     ToolbarComponent,
     HomeComponent,
-    ListissuesComponent
+    ListissuesComponent,
+    LogintoolbarComponent
   ],
   imports: [
     BrowserModule,
