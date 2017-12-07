@@ -1,0 +1,75 @@
+<header>         
+  <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" [containerInside]="false">
+      <logo>
+          <img class="logoimage" src="assets/img/issuer.png" alt="Issuer"><a class="logo navbar-brand" href="#"><strong>&nbsp;&nbsp;Issuer</strong></a>
+      </logo>
+      <!-- <links>
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active waves-light" mdbRippleRadius>
+                  <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item waves-light" mdbRippleRadius>
+                  <a class="nav-link">Link</a>
+              </li>
+              <li class="nav-item waves-light" mdbRippleRadius>
+                  <a class="nav-link">Profile</a>
+              </li>
+          </ul>
+      </links> -->
+  </mdb-navbar>
+  <!-- Main -->
+  <div class="view intro hm-purple-light">
+      <div class="full-bg-img flex-center">
+          <div class="signupform">
+
+              <div class="card">
+                  
+                  <!--Card image-->
+                  <img class="cardimage" src="assets/img/issuer.png" alt="Issuer">
+              
+                  <!--Card content-->
+                  <div class="card-body">
+                      <!--Title-->
+                      <h4 class="card-title h5 text-center mb-4">Lets Find Issues</h4>
+                      <!--Text-->
+                      <form [formGroup]="authform">
+                        <div class="md-form">
+                            <i class="fa fa-envelope prefix grey-text"></i>
+                            <input type="email" id="defaultForm-email" class="form-control"   formControlName="email" mdbActive>
+                            <label for="defaultForm-email">Your email</label>
+                        </div>
+                    
+                        <div class="md-form">
+                            <i class="fa fa-lock prefix grey-text"></i>
+                            <input type="password" id="defaultForm-pass" class="form-control"  formControlName="password" mdbActive>
+                            <label for="defaultForm-pass">Your password</label>
+                        </div>
+                    
+                        <div class="text-center">
+                            <button class="btn btn-default waves-light" (click)="makeAuth()" mdbRippleRadius>Let Me Check</button>
+                        </div>
+                      </form>
+                  </div>
+              
+              </div>
+
+              <!-- <p class="h5 text-center mb-4">Sign in</p> -->
+              
+                  
+          </div>
+          <div class="container text-center white-text wow fadeInUp textcontainer">
+              <h2>This is issuer demo</h2>
+              <br>
+              <h5>See the bug or an issues comes by any application</h5>
+          </div>
+      </div>
+      <div class="loginfooter">
+        &copy;&nbsp;&nbsp;{{year}}, Issued Application
+      </div>
+  </div>
+  <!-- /.Main -->
+</header>     
+<!--Main Navigation-->
+
+      
+      

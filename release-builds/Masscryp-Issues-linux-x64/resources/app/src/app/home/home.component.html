@@ -1,0 +1,65 @@
+<app-toolbar></app-toolbar>
+
+<ngx-loading [show]="ngxloading"></ngx-loading>
+    <!-- Main -->
+    <main>
+        <div class="container">
+            <div class="row mt-5 pt-5">
+                <div class="col text-center">
+                    <h2>The Issued Raised By Application</h2>
+                </div>
+            </div>
+
+            <hr>
+            
+
+            <div class="row"  *ngIf="showapplists == true">
+                
+                <div class="col-md-12">&nbsp;</div>     
+
+                <div class="col-md-4" *ngFor="let p of applists">
+                    
+                        <!--Card-->
+                        <div class="card card-cascade narrower">
+                    
+                            <!--Card image-->
+                            <div class="view overlay hm-white-slight waves-light" mdbRippleRadius>
+                                <img [src]="p.appurl" class="img-fluid" alt="">
+                                <a>
+                                    <div class="mask"></div>
+                                </a>
+                            </div>
+                            <!--/.Card image-->
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!-- <h5 class="pink-text"><i class="fa fa-cutlery"></i> Culinary</h5> -->
+                                <!--Title-->
+                                <h4 class="card-title">{{p.appname}}</h4>
+                                <!--Text-->
+                                <p class="card-text">{{p.appdescr}}</p>
+                                <a class="btn btn-unique waves-light" mdbRippleRadius (click)="findissues(p)">Find Issues</a>
+                            </div>
+                            <!--/.Card content-->
+                    
+                        </div>
+                        <!--/.Card-->
+                    
+                </div>
+                
+               
+
+             
+            </div>
+
+            <div class="row"  *ngIf="showapplists == false">
+                
+                <div class="col-md-12">&nbsp;</div>
+
+                <div class="col-md-12" >
+                    Loading...
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!-- /.Main -->

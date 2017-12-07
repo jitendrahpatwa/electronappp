@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.view {
+    background: url("assets/img/loginimg.jpg") no-repeat center center;
+    background-size: cover;
+}    
+.navbar {
+    background-color: transparent;
+}
+.top-nav-collapse {
+    // background-color: #4285F4;
+}
+@media only screen and (max-width: 768px) {
+    .navbar {
+        // background-color: #4285F4;
+    }
+}
+.intro {
+    min-height: 800px;
+    position: relative;
+}
+
+// logintoolbar
+.signupform {
+    margin-left: 15%;
+    margin-bottom: 20%;
+    width: 60%;
+    margin-top: 25%;
+}
+.textcontainer {
+    margin-bottom: 10%;
+}
+img.cardimage {
+    width: 25%;
+    text-align: center;
+    margin-right: 40%;
+    margin-left: 40%;
+    margin-top: 5%;
+}
+img.logoimage {
+    width: 40px;
+}
+.loginfooter {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    margin-bottom: 4%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
