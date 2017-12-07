@@ -21,6 +21,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
+import * as Raven from 'raven-js';
+
 import { AuthService } from './service/auth/auth.service';
 
 import { AuthComponent } from './auth/auth.component';
@@ -28,6 +30,12 @@ import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 import { HomeComponent } from './home/home.component';
 import { ListissuesComponent } from './listissues/listissues.component';
 import { LogintoolbarComponent } from './layout/logintoolbar/logintoolbar.component';
+
+
+// Raven
+// .config('https://ad566634df2b4b9ba348b15d5efdd664@sentry.io/253700')
+// .install();
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -4,3 +4,21 @@
     background-position: center center; 
     background-attachment: fixed;
 }
+
+.card.card-cascade.narrower .view {
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: -20px;
+}
+.card.card-cascade .view {
+    border-radius: 4px;
+}
+
+.view{
+    background: none;
+}
+.view img {
+    text-align: center;
+    margin-left: 40%;
+    margin-right: 40%;
+}

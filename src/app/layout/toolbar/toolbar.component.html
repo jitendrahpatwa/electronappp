@@ -1,22 +1,22 @@
-<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark bg-pink scrolling-navbar" [containerInside]="false">
+<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark bg-indigo darken-4 scrolling-navbar" [containerInside]="false">
         <logo>
-            <a class="logo navbar-brand" href="#"><strong>Navbar</strong></a>
+                <img class="logoimage" src="assets/img/issuer.png" alt="Issuer"><a class="logo navbar-brand" href="#"><strong>&nbsp;&nbsp;Issuer</strong></a>
         </logo>
         <links>
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active waves-light" mdbRippleRadius>
-                    <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item {{routeHomeActive}} waves-light" mdbRippleRadius>
+                    <a [routerLink]="['/home']" class="nav-link">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item waves-light" mdbRippleRadius>
-                    <a class="nav-link">Features</a>
+                <li class="nav-item {{routeListsActive}} waves-light" mdbRippleRadius>
+                    <a [routerLink]="['/lists']" class="nav-link">Lists</a>
                 </li>
-                <li class="nav-item waves-light" mdbRippleRadius>
+                <!-- <li class="nav-item waves-light" mdbRippleRadius>
                     <a class="nav-link">Pricing</a>
                 </li>
                 <li class="nav-item waves-light" mdbRippleRadius>
                     <a class="nav-link">Opinions</a>
-                </li>
-            </ul>
+                </li> -->  
+            </ul>    
             <ul class="navbar-nav nav-flex-icons">
                 <li class="nav-item waves-light" mdbRippleRadius>
                     <a class="nav-link"><i class="fa fa-facebook"></i></a>

@@ -6,8 +6,11 @@ function createWindow () {
     width: 1000, 
     height: 600,
     backgroundColor: '#ffffff',
-    icon: `${__dirname}/src/assets/masscryp.png`,
-    // frame: false
+    icon: `${__dirname}/src/assets/img/icon_issuer.png`,
+    // frame: false,
+    // resizable:false,
+    // fullscreen:true,
+    darkTheme:true
   })
   win.loadURL(`file://${__dirname}/dist/index.html`)
   //// uncomment below to open the DevTools.
