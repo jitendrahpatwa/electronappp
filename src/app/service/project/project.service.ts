@@ -72,7 +72,7 @@ export class ProjectService {
 
 
   retireveDBNAMEBYUSERDetails(dbname,dbimgname,dbuserid){
-    console.log(dbname,dbimgname,dbuserid)
+    // console.log(dbname,dbimgname,dbuserid)
     return new Promise((resolve,reject)=>{
       
       let sc = new PouchDB(this.datastoreServ.retrieveFromLocal("IssuerAppStoreLocation")+dbname);

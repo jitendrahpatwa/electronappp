@@ -12,7 +12,7 @@
                       </logo>
                       {{appName?appName:' some app'}}
                     </h2>
-                    <p>There is the list of issues raised by email id/ name.</p>
+                    <p>There is the list of issues raised by {{appDBNAMEURLFORUSER?appDBNAMEURLFORUSER:' there!'}}.</p>
                 </div>
             </div>
 
@@ -25,25 +25,25 @@
                     <thead>
                       <tr>
                         <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
+                        <th>Page</th>
+                        <th>Code</th>
+                        <th>Time</th>
+                        <th>Description</th>
+                        <th>Location</th>
+                        <th>Notes</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                      <tr *ngFor="let i of applistsusersissues"> 
+                        <th scope="row">{{i.rowid}}</th>
+                        <td>{{i.page}}</td>
+                        <td>{{i.schema}}</td>
+                        <td>{{i.time}}</td>
+                        <td>{{i.description}}</td>
+                        <td>{{i.city+' '+i.country}}</td>
+                        <td>{{i.tracker}}</td>
                       </tr>
-                      <tr>
+                      <!-- <tr>
                         <th scope="row">2</th>
                         <td>Jacob</td>
                         <td>Thornton</td>
@@ -59,7 +59,7 @@
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
-                      </tr>
+                      </tr> -->
                     </tbody>
                 </table>
               </div>
