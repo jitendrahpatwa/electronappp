@@ -7,13 +7,13 @@ import { DatastoreService } from '../service/datastore/datastore.service';
 
 import * as _ from 'lodash';
 @Component({
-  selector: 'app-listissues',
-  templateUrl: './listissues.component.html',
-  styleUrls: ['./listissues.component.css'],
+  selector: 'app-listissuesbyuser',
+  templateUrl: './listissuesbyuser.component.html',
+  styleUrls: ['./listissuesbyuser.component.scss'],
   providers:[ProjectService,DatastoreService]
 })
-export class ListissuesComponent implements OnInit {
-
+export class ListissuesbyuserComponent implements OnInit {
+  
   public ngxloading = false;
 
   appName:string;
@@ -21,30 +21,26 @@ export class ListissuesComponent implements OnInit {
   appImage:string;
   appKey:string;
 
-  applistsusers:any;
-  showapplistsusers:number = 1;
+  applistsusersissues:any;
+  showapplistsusersissues:number = 1;
 
   appDBNAMEURL:string;
   appDBIMAGEURL:string;
+  appDBNAMEURLFORUSER:string;
 
   constructor(
     public projectServ:ProjectService,
     public router:Router,
     public datastoreServ:DatastoreService,
-  ) {
-
-  }
+  ) { }
 
   ngOnInit() {
     this.ngxloading = true;
-    // this.projectServ.letsIssuing("18testbcdef@mail.com",location.href,"myFunc()","Some issues have taken");
     this.loadData();
-
-    
   }
 
   loadData(){
-
+    
     this.appKey = this.datastoreServ.retrieveFromLocal("IssuerAppProjectKey");
     this.appName = this.datastoreServ.retrieveFromLocal("IssuerAppProjectName");
     this.appID = this.datastoreServ.retrieveFromLocal("IssuerAppProjectID");
@@ -53,44 +49,40 @@ export class ListissuesComponent implements OnInit {
     this.appDBNAMEURL = this.datastoreServ.retrieveFromLocal("IssuerAppProjectDBNAMEURL");
     this.appDBIMAGEURL = this.datastoreServ.retrieveFromLocal("IssuerAppProjectDBIMAGEURL");
 
+    this.appDBNAMEURLFORUSER = this.datastoreServ.retrieveFromLocal("IssuerAppProjectToSeeUserID");
     this.retrieve();
   }
 
   retrieve(){
-    this.projectServ.retireveDBNAMEDetails(this.appDBNAMEURL)
+    console.log(this.appDBNAMEURL,this.appDBIMAGEURL,this.appDBNAMEURLFORUSER)
+    let dbname = this.appDBNAMEURL;
+    let dbimgname = this.appDBIMAGEURL;
+    let dbuserid = this.appDBNAMEURLFORUSER;
+    this.projectServ.retireveDBNAMEBYUSERDetails(dbname,dbimgname,dbuserid)
     .then(
       d=>{
-        // console.log(d)
-        this.ngxloading = false;
-        this.applistsusers = d;
-        this.showapplistsusers = 0;
+        console.log(d)
+        this.ngxloading = true;
+        this.showapplistsusersissues = 0;
       },
       e=>{
-        // console.log(e)
+        console.log(e)
         this.ngxloading = false;
         this.raiseErrorView();
       }
     ).catch(
       e=>{
-        // console.log(e)
+        console.log(e)
         this.ngxloading = false;
         this.raiseErrorView();
       }
     );
   }
-  
 
   raiseErrorView(){
-    this.showapplistsusers = 1;
+    this.showapplistsusersissues = 1;
     setTimeout(()=>{
-      this.showapplistsusers = 2;
+      this.showapplistsusersissues = 2;
     },2500);
   }
-
-  openIssueByUser(u){
-    // console.log(u)
-    this.datastoreServ.saveToLocal("IssuerAppProjectToSeeUserID",u.id);
-    this.router.navigate(["/listsbyuser"]);
-  }
-
 }

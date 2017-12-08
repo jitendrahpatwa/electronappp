@@ -6,6 +6,7 @@ import { AppComponent }   from './app.component';
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
 import { ListissuesComponent } from './listissues/listissues.component';
+import { ListissuesbyuserComponent } from './listissuesbyuser/listissuesbyuser.component';
 
 const routes:Routes =  [
     { 
@@ -20,6 +21,10 @@ const routes:Routes =  [
     { 
         path: 'lists',  
         component: ListissuesComponent
+    },
+    { 
+        path: 'listsbyuser',  
+        component: ListissuesbyuserComponent
     },
     { 
         path: '**', 

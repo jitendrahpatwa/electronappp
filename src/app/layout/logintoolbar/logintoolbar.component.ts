@@ -30,12 +30,14 @@ export class LogintoolbarComponent implements OnInit {
       public datastoreServ:DatastoreService
     ) { 
       this.authform = this.formBuilder.group({
+        // name:['',Validators.compose([Validators.required])],
         email:['',Validators.compose([Validators.required,Validators.email])],
         password:['',Validators.compose([Validators.required,Validators.min(2)])]
       });
     }
   
     ngOnInit() {
+      // this.datastoreServ.setPassphrase("123456");
     }
   
     makeAuth(){

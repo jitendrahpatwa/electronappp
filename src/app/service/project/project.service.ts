@@ -7,6 +7,8 @@ import * as _ from 'lodash';
 import * as Raven from 'raven-js';
 import * as html2canvas from 'html2canvas';
 
+import { DatastoreService } from '../datastore/datastore.service';
+
 @Injectable()
 export class ProjectService {
 
@@ -14,7 +16,8 @@ export class ProjectService {
   pdb2:any;
 
   constructor(
-    public http:Http
+    public http:Http,
+    public datastoreServ:DatastoreService
   ) {
     this.pdb1 = new PouchDB("http://45.55.211.36:5984/apps/"); // listing apps
     this.pdb2 = new PouchDB("http://45.55.211.36:5984/list/");
@@ -41,6 +44,62 @@ export class ProjectService {
   getIP(){
     console.log(localStorage.getItem("dummyuserinfo"))
   }
+
+  
+  retireveDBNAMEDetails(dbname){
+    return new Promise((resolve,reject)=>{
+      
+      let sc = new PouchDB(this.datastoreServ.retrieveFromLocal("IssuerAppStoreLocation")+dbname);
+      
+      sc.allDocs({include_docs:false})
+      .then(
+        d=>{
+          // console.log(d,d.rows.length)
+          // d.rows.forEach((value,key) => {
+          //   console.log(value,key)
+            
+          // });
+          resolve(d.rows);
+        },
+        e=>{
+          // console.log(e)
+          reject(e);
+          this.handleError(e);
+        }
+      );
+    })
+  }
+
+
+  retireveDBNAMEBYUSERDetails(dbname,dbimgname,dbuserid){
+    console.log(dbname,dbimgname,dbuserid)
+    return new Promise((resolve,reject)=>{
+      
+      let sc = new PouchDB(this.datastoreServ.retrieveFromLocal("IssuerAppStoreLocation")+dbname);
+      
+      sc.get(dbuserid)
+      .then(
+        d=>{
+          // console.log(d,d.rows.length)
+          // d.rows.forEach((value,key) => {
+          //   console.log(value,key)
+            
+          // });
+          resolve(d);
+        },
+        e=>{
+          // console.log(e)
+          reject(e);
+          this.handleError(e);
+        }
+      );
+    })
+  }
+
+
+
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////
 
   letsIssuing(id,page,func,description){
     this.http.get("https://freegeoip.net/json/")

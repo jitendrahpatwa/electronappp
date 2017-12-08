@@ -30,6 +30,7 @@ import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 import { HomeComponent } from './home/home.component';
 import { ListissuesComponent } from './listissues/listissues.component';
 import { LogintoolbarComponent } from './layout/logintoolbar/logintoolbar.component';
+import { ListissuesbyuserComponent } from './listissuesbyuser/listissuesbyuser.component';
 
 
 // Raven
@@ -43,7 +44,8 @@ import { LogintoolbarComponent } from './layout/logintoolbar/logintoolbar.compon
     ToolbarComponent,
     HomeComponent,
     ListissuesComponent,
-    LogintoolbarComponent
+    LogintoolbarComponent,
+    ListissuesbyuserComponent
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,28 @@ export class DatastoreService {
 
   }
 
+  setPassphrase(str){
+    let token = "Linux-App-Issuer";
+    //console.log(token)
+    let storeStr = (CryptoJS.AES.encrypt(str,token)).toString();
+    console.log(storeStr)
+    console.info(this.getPassphrase(storeStr));
+  }
+  getPassphrase(str){
+    let token = "Linux-App-Issuer";
+    let fromStorage = str;
+    //console.log(fromStorage)
+    if(fromStorage == "" || fromStorage == null){
+      return "";
+    }else{
+      let getDecrypt = CryptoJS.AES.decrypt(fromStorage,token);
+      let finalStr = "";
+      finalStr = getDecrypt.toString(CryptoJS.enc.Utf8);
+      return finalStr;
+    }
+  }
+
+
   saveToLocal(name,str){
     let token = "Linux-App-Issuer";
     //console.log(token)

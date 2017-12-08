@@ -18,7 +18,7 @@ export class ToolbarComponent implements OnInit {
     public router:Router
   ) { 
     
-    console.log(this.router.url,this.router)
+    // console.log(this.router.url,this.router)
     
     
 
